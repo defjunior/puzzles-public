@@ -1,18 +1,21 @@
 # Puzzle systems source
 
-Two focused systems from puzzles, kept private for review.
+All six puzzle implementations from puzzles, kept private for review: Hitori, Minesweeper, Nonograms, Queens, Rooks and Sudoku. Queens and Rooks are chess-piece puzzles, not a full chess game or chess tactics engine.
 
-- `src/ServerStorage/Games/Hitori/Gen.lua`: actual constraint validation, bounded solution search and procedural Hitori generation. Rules cover row/column duplicates, adjacent blocked cells and connectivity of unblocked cells.
-- `src/ServerStorage/Modules/NDimensionalBoard.lua`: dimension/index mapping, slice positioning and board construction interface.
+- Hitori: grid generation, blocked-cell rules and connected unblocked cells, with its original `Gen.lua` search/generator.
+- Minesweeper: safe first reveal, mine placement, flood reveal, flags and chord interactions, including N-dimensional boards.
+- Nonograms: procedural masks, row/column run clues, starter hints and interaction checks.
+- Queens: generated regions, queen placements, conflict checks and N-dimensional boards.
+- Rooks: rook placements, white-piece clues and conflict/solution checks.
+- Sudoku: solved-grid generation, clue removal, digit entry and conflict checks.
+- `NDimensionalBoard.lua`: dimension/index mapping, slice positioning and board construction interface.
 
-## What this shows
-
-The Hitori module keeps validation and search separate from the game's sessions/UI. NDimensionalBoard separates logical coordinates from physical board placement. These are the original implementations, with short responsibility comments; no simplified replacement solver or copied puzzle samples are included.
+Actual generation, rule checks and session interfaces remain. Short comments mark removed authored defaults, colors, cosmetic identifiers/service methods, extra-board presets, dialogue and Hitori's fallback sample grid. These omissions are deliberate, not working replacement implementations. Extra N-dimensional board preset lists are empty; callers must provide configuration to exercise that retained code.
 
 ## Limits
 
-A generation request with uniqueness enabled does not guarantee a unique result: the search uses deadlines, and the generator can return its best candidate after the unique-solution check times out or fails. Callers must verify the result independently when uniqueness matters. This is an explicit source limitation, not a passing test claim.
+This is a source showcase, not a standalone Roblox game. The game modules still need the original BoardClass, Roblox services/types, scene origins, some Framework wiring and presentation assets. Admin tooling, services/bootstrap, models, skins, rewards and authored puzzle samples are not bundled. Omitted configuration/visual values must be supplied or presentation wiring adapted before running these modules. Cosmetic methods are explicit no-op stubs.
 
-NDimensionalBoard requires Roblox CFrame/Vector3/HttpService and a supplied BoardClass/config. Dimension sizes grow quickly; no large-board memory/performance guarantee is claimed. This extraction does not bundle game sessions, admin tooling, UI, authored board samples, skins, rewards, assets or full bootstrap.
+Hitori's deadlines/best-candidate fallback mean a uniqueness request is not a guarantee. Its session module can now return early if procedural generation fails because the authored fallback sample was removed. Sudoku removes clues from a generated solution without a uniqueness solver; its input checks compare with that generated answer. Nonograms checks against its generated mask rather than proving clue uniqueness. Queens/Rooks are chess-piece placement puzzles with their own rules, not chess move engines. None of these omissions or limitations were repaired or represented as passing tests.
 
-No Roblox execution, solver regression, uniqueness benchmark or performance testing was performed for this extraction. See `source-manifest.json` for file-by-file live comparison and hashes. The original puzzles repo was only switched to private, not edited. Original git history is not imported. Private, no license; owner review and a full extraction-history audit are required before any public release.
+No Roblox execution, solver regression, uniqueness benchmark or performance testing was performed. N-dimensional sizes grow quickly; no large-board memory/performance guarantee is claimed. See `source-manifest.json` for source/output hashes and omissions. Original puzzles source remains untouched and private. Original git history is not imported. Private, no license; owner review and a full extraction-history audit are required before any public release.
