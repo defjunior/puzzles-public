@@ -1,0 +1,22 @@
+{
+  "verified_date": "2026-10-07",
+  "comparison_note": "Live original and committed destination compared; outer blank lines ignored for modified flag. No runtime validation. Original history not imported.",
+  "files": [
+    {
+      "path": "src/ServerStorage/Modules/NDimensionalBoard.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "c9730ea62533650a2da3b259a92d75feb6d62cda94c6c8e387b099fd304362d6",
+      "output_sha256": "ee0ef7685af3993310a9a95cb37aa700954fb7266797f6f1de16100fb4d0d803",
+      "modified": true,
+      "lines": 293
+    },
+    {
+      "path": "src/ServerStorage/Games/Hitori/Gen.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "9f857caf5b6c8d261612ed9e97350f1e08fb0a5e4e42f8cbde2aa1770ce6a3de",
+      "output_sha256": "f85d515e8c87ee9a211a4a3e1a3c66c6217b9f1e285cceb0c58e8802a8d200ec",
+      "modified": true,
+      "lines": 802
+    }
+  ]
+}
