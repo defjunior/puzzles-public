@@ -1,6 +1,6 @@
 {
-  "verified_date": "2026-10-07",
-  "comparison_note": "Live original and committed destination compared; outer blank lines ignored for modified flag. No runtime validation. Original history not imported.",
+  "verified_date": "2026-10-08",
+  "comparison_note": "Live original and committed destination compared. Eight source files, all six game implementations. No runtime validation. Original history not imported.",
   "files": [
     {
       "path": "src/ServerStorage/Modules/NDimensionalBoard.lua",
@@ -17,6 +17,136 @@
       "output_sha256": "f85d515e8c87ee9a211a4a3e1a3c66c6217b9f1e285cceb0c58e8802a8d200ec",
       "modified": true,
       "lines": 802
+    },
+    {
+      "path": "src/ServerStorage/Games/Rooks/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "7cb4beba3d2e969a1bb813178a5c1a1a80b48dd4476db7e8201d13cdef5c2915",
+      "output_sha256": "ede0e8aa55d3eab1075001dc7a585b6ffaed1622a4d7f4d61d230e409619d063",
+      "modified": true,
+      "lines": 845,
+      "omissions": [
+        "board/session defaults",
+        "BOARD_LIGHT_COLOR",
+        "BOARD_DARK_COLOR",
+        "WHITE_PIECE_COLOR",
+        "ROOK_COLOR",
+        "ROOK_CONFLICT_COLOR",
+        "MARKED_EMPTY_COLOR",
+        "CLUE_PLATE_COLOR",
+        "TEXT_DARK_COLOR",
+        "TEXT_LIGHT_COLOR",
+        "CLUE_TEXT_COLOR"
+      ]
+    },
+    {
+      "path": "src/ServerStorage/Games/Minesweeper/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "58f0f36619b04b1717c97d7b1ec2b9ef15096223e38f22fd1a5457702977ac7f",
+      "output_sha256": "6395925b4bf04b4bcb37bba5dc4edf017b318ee556253b1da2a473113e54b6d7",
+      "modified": true,
+      "lines": 924,
+      "omissions": [
+        "board/session defaults",
+        "EXTRA_ND_BOARD_CONFIGS"
+      ]
+    },
+    {
+      "path": "src/ServerStorage/Games/Nonograms/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "af3f1d3c54ad4f4e188a9e30c0d1f0338834f26f4dc6d36301dc5d32a24caaa8",
+      "output_sha256": "d21c99686d2608cd79e9e057610fcea643d9a397316ac88c698a2ec9c40394ab",
+      "modified": true,
+      "lines": 1428,
+      "omissions": [
+        "board/session defaults",
+        "UNKNOWN_CELL_COLOR_A",
+        "UNKNOWN_CELL_COLOR_B",
+        "FILLED_CELL_COLOR",
+        "CROSS_CELL_COLOR",
+        "LOCKED_CROSS_CELL_COLOR",
+        "CROSS_TEXT_COLOR",
+        "CLUE_TEXT_COLOR",
+        "CLUE_PLATE_COLOR",
+        "MINOR_GRID_COLOR",
+        "MAJOR_GRID_COLOR",
+        "MISTAKE_MESSAGES",
+        "NONOGRAM_CEL_CATEGORY",
+        "NONOGRAM_CEL_DEFAULT",
+        "local function buildMistakeMessage(playerName, livesLeft)",
+        "function Puzzle:_getCosmeticService()",
+        "function Puzzle:_getEquippedNonogramCelId(player)",
+        "function Puzzle:_placeNonogramCel(index, celId)"
+      ]
+    },
+    {
+      "path": "src/ServerStorage/Games/Queens/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "e641128f65953952e411863ad6a1554470959461849cd0655a316aa1e97823f3",
+      "output_sha256": "b26d6b2fb3b327165d219df4f7dfb14e5a63e47ea1f866aea9283630c398fed0",
+      "modified": true,
+      "lines": 1292,
+      "omissions": [
+        "board/session defaults",
+        "BASE_CELL_COLOR_A",
+        "BASE_CELL_COLOR_B",
+        "QUEEN_CELL_COLOR",
+        "QUEEN_CONFLICT_COLOR",
+        "BLOCKED_CELL_COLOR",
+        "BASE_TEXT_COLOR",
+        "BLOCKED_TEXT_COLOR",
+        "REGION_BORDER_COLOR",
+        "OUTER_BORDER_COLOR",
+        "QUEENS_INDICATOR_CATEGORY",
+        "QUEENS_INDICATOR_DEFAULT",
+        "CHESS_SKIN_ID",
+        "EXTRA_ND_BOARD_CONFIGS",
+        "local function cloneQueenChessModel(chessRoot)",
+        "function Puzzle:_getCosmeticService()",
+        "function Puzzle:_getEquippedIndicatorId(player)",
+        "function Puzzle:_cloneIndicatorModel(indicatorId)"
+      ]
+    },
+    {
+      "path": "src/ServerStorage/Games/Sudoku/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "8a7f6aa0ad83f0b03436dc66210de989f8fae4306180fa740e2ba9d7106f27ea",
+      "output_sha256": "73ceeff63798a305552206110706d3e04cf927134692c08fcae96895d3726780",
+      "modified": true,
+      "lines": 587,
+      "omissions": [
+        "board/session defaults",
+        "BASE_CELL_COLOR_A",
+        "BASE_CELL_COLOR_B",
+        "CLUE_TEXT_COLOR",
+        "ENTRY_TEXT_COLOR",
+        "CONFLICT_TEXT_COLOR",
+        "MINOR_GRID_COLOR",
+        "MAJOR_GRID_COLOR",
+        "MISTAKE_MESSAGES",
+        "local function buildMistakeMessage(playerName, livesLeft)"
+      ]
+    },
+    {
+      "path": "src/ServerStorage/Games/Hitori/init.lua",
+      "source_repo": "defjunior/puzzles",
+      "source_sha256": "e2e9e38a39406f77ccf71cd0640be90b50204683a65c1d4b90121586f3e40681",
+      "output_sha256": "0e261f432630f07cd88f02cebf20fdc2322e8ca96309053c2be4929fdf7524b8",
+      "modified": true,
+      "lines": 425,
+      "omissions": [
+        "board/session defaults",
+        "BLOCKED_CELL_COLOR",
+        "HITORI_CEL_CATEGORY",
+        "HITORI_CEL_DEFAULT",
+        "CHESS_SKIN_ID",
+        "CHESS_PAWN_WEIGHT",
+        "local function chooseChessPieceModel(chessRoot)",
+        "function Puzzle:_getCosmeticService()",
+        "function Puzzle:_getEquippedHitoriCelId(player)",
+        "function Puzzle:_placeHitoriCel(index, celId)",
+        "authored fallback grid/mask"
+      ]
     }
   ]
 }
